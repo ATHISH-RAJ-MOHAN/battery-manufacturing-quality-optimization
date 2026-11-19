@@ -1,0 +1,14 @@
+,mean_absolute_shap
+process_temperature,0.012095241770268692
+welding_resistance,0.013393445376850601
+current,0.014845812364052283
+cycle_time,0.014928484725723815
+pretest_voltage,0.017092172113604576
+welding_duration,0.07001713454365333
+temperature_variation,0.10494708039997061
+alignment_deviation,0.20582267133345294
+interface_temperature,0.2131862117787267
+internal_resistance,0.22738297204348384
+voltage_variation,0.27579527653802527
+assembly_pressure,0.3294690605884042
+welding_energy,0.4193306507325406

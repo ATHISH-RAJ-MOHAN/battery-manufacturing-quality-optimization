@@ -1,0 +1,1 @@
+{"records": 24000, "seed": 42, "defect_rate": 0.06, "batch_size": 200, "false_negative_cost": 15, "false_positive_cost": 1}

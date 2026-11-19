@@ -1,0 +1,251 @@
+{
+  "seed": 42,
+  "configuration": {
+    "records": 24000,
+    "defect_rate": 0.06,
+    "batch_size": 200,
+    "false_negative_cost": 15,
+    "false_positive_cost": 1
+  },
+  "data_quality": {
+    "rows": 24000,
+    "missing": {
+      "voltage_variation": 64,
+      "internal_resistance": 78,
+      "welding_resistance": 61,
+      "current": 80,
+      "pretest_voltage": 66,
+      "process_temperature": 63,
+      "interface_temperature": 77,
+      "temperature_variation": 80,
+      "welding_energy": 80,
+      "welding_duration": 64,
+      "assembly_pressure": 78,
+      "alignment_deviation": 83,
+      "cycle_time": 60
+    },
+    "defect_rate": 0.06029166666666667,
+    "duplicates": 0,
+    "outliers_over_3_nominal_scales": {
+      "voltage_variation": 36,
+      "internal_resistance": 46,
+      "welding_resistance": 29,
+      "current": 42,
+      "pretest_voltage": 30,
+      "process_temperature": 30,
+      "interface_temperature": 33,
+      "temperature_variation": 35,
+      "welding_energy": 41,
+      "welding_duration": 76,
+      "assembly_pressure": 31,
+      "alignment_deviation": 34,
+      "cycle_time": 28
+    }
+  },
+  "selected_model": "lightgbm",
+  "models": [
+    {
+      "model": "logistic",
+      "precision": 0.09171597633136094,
+      "recall": 0.5054347826086957,
+      "f1": 0.15525876460767946,
+      "roc_auc": 0.6381311411770695,
+      "pr_auc": 0.13363475160744256,
+      "balanced_accuracy": 0.6179105997352612,
+      "brier": 0.04703990713767645,
+      "false_positive_rate": 0.2696135831381733,
+      "inspection_burden": 0.2816666666666667,
+      "confusion_matrix": [
+        [
+          2495,
+          921
+        ],
+        [
+          91,
+          93
+        ]
+      ],
+      "latency_ms_per_row": 0.0007553055557865365,
+      "calibration": "isotonic"
+    },
+    {
+      "model": "random_forest",
+      "precision": 0.2567049808429119,
+      "recall": 0.7282608695652174,
+      "f1": 0.37960339943342775,
+      "roc_auc": 0.872005778433968,
+      "pr_auc": 0.45261174149989053,
+      "balanced_accuracy": 0.8073388656959577,
+      "brier": 0.03704387030385845,
+      "false_positive_rate": 0.11358313817330211,
+      "inspection_burden": 0.145,
+      "confusion_matrix": [
+        [
+          3028,
+          388
+        ],
+        [
+          50,
+          134
+        ]
+      ],
+      "latency_ms_per_row": 0.010601055555778456,
+      "calibration": "sigmoid"
+    },
+    {
+      "model": "xgboost",
+      "precision": 0.23407917383820998,
+      "recall": 0.7391304347826086,
+      "f1": 0.35555555555555557,
+      "roc_auc": 0.8718259978617249,
+      "pr_auc": 0.4853804686049557,
+      "balanced_accuracy": 0.8044305569697587,
+      "brier": 0.03517985716462135,
+      "false_positive_rate": 0.13026932084309134,
+      "inspection_burden": 0.1613888888888889,
+      "confusion_matrix": [
+        [
+          2971,
+          445
+        ],
+        [
+          48,
+          136
+        ]
+      ],
+      "latency_ms_per_row": 0.0017075000000153927,
+      "calibration": "uncalibrated"
+    },
+    {
+      "model": "lightgbm",
+      "precision": 0.28187919463087246,
+      "recall": 0.6847826086956522,
+      "f1": 0.3993660855784469,
+      "roc_auc": 0.8726389878831077,
+      "pr_auc": 0.48911999037290665,
+      "balanced_accuracy": 0.7954065268302617,
+      "brier": 0.03517035463436498,
+      "false_positive_rate": 0.0939695550351288,
+      "inspection_burden": 0.12416666666666666,
+      "confusion_matrix": [
+        [
+          3095,
+          321
+        ],
+        [
+          58,
+          126
+        ]
+      ],
+      "latency_ms_per_row": 0.0037598333334345727,
+      "calibration": "uncalibrated"
+    }
+  ],
+  "anomaly": {
+    "precision": 0.2465753424657534,
+    "recall": 0.29347826086956524,
+    "f1": 0.2679900744416873,
+    "roc_auc": 0.622588076570614,
+    "pr_auc": 0.10847561379127788,
+    "balanced_accuracy": 0.622588076570614,
+    "brier": 0.08194444444444444,
+    "false_positive_rate": 0.048302107728337235,
+    "inspection_burden": 0.060833333333333336,
+    "confusion_matrix": [
+      [
+        3251,
+        165
+      ],
+      [
+        130,
+        54
+      ]
+    ]
+  },
+  "policies": {
+    "high_recall": 0.035,
+    "low_false_reject": 0.41000000000000003,
+    "balanced_cost": 0.095
+  },
+  "policy_test_metrics": {
+    "high_recall": {
+      "precision": 0.13994685562444642,
+      "recall": 0.8586956521739131,
+      "f1": 0.24067022086824066,
+      "roc_auc": 0.8726389878831077,
+      "pr_auc": 0.48911999037290665,
+      "balanced_accuracy": 0.7872225333469097,
+      "brier": 0.03517035463436498,
+      "false_positive_rate": 0.2842505854800937,
+      "inspection_burden": 0.3136111111111111,
+      "confusion_matrix": [
+        [
+          2445,
+          971
+        ],
+        [
+          26,
+          158
+        ]
+      ]
+    },
+    "low_false_reject": {
+      "precision": 0.6161616161616161,
+      "recall": 0.33152173913043476,
+      "f1": 0.43109540636042404,
+      "roc_auc": 0.8726389878831077,
+      "pr_auc": 0.48911999037290665,
+      "balanced_accuracy": 0.6601988086752877,
+      "brier": 0.03517035463436498,
+      "false_positive_rate": 0.011124121779859485,
+      "inspection_burden": 0.0275,
+      "confusion_matrix": [
+        [
+          3378,
+          38
+        ],
+        [
+          123,
+          61
+        ]
+      ]
+    },
+    "balanced_cost": {
+      "precision": 0.28187919463087246,
+      "recall": 0.6847826086956522,
+      "f1": 0.3993660855784469,
+      "roc_auc": 0.8726389878831077,
+      "pr_auc": 0.48911999037290665,
+      "balanced_accuracy": 0.7954065268302617,
+      "brier": 0.03517035463436498,
+      "false_positive_rate": 0.0939695550351288,
+      "inspection_burden": 0.12416666666666666,
+      "confusion_matrix": [
+        [
+          3095,
+          321
+        ],
+        [
+          58,
+          126
+        ]
+      ]
+    }
+  },
+  "split_rows": [
+    12000,
+    3600,
+    2400,
+    2400,
+    3600
+  ],
+  "dataset_sha256": "ecc501774a9723ff253756a21a33813535afc4ddceaa222d6a873d72fc812f57",
+  "python": "3.12.10",
+  "versions": {
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "shap": "0.54.1",
+    "xgboost": "3.4.1"
+  }
+}
