@@ -187,5 +187,3 @@ The independent rerun matched the dataset hash, model selection and thresholds e
 ## Limitations and next steps
 
 Synthetic relationships dominate measured performance. No factory yield gain, causal root cause, validated uncertainty interval or safe recipe is demonstrated. Contexts are fixed when optimizing controls; changing physical recipes may change downstream measurements in ways this simulator omits. Data drift, temporal deterioration, sensor calibration errors, real process constraints, cost estimation and prospective safety validation require real engineering evidence. Next steps include learning curves, independent simulators, equipment holdout studies, richer feature interactions, bootstrap calibration uncertainty and controlled pilot validation with an authorized dataset.
-
-No license has been added. No commit or push is performed by the pipeline.
